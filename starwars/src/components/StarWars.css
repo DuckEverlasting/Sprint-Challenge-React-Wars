@@ -1,0 +1,58 @@
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-image: url('../sw-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.character {
+  margin: 10px;
+  height: 200px;
+  width: 250px;
+}
+
+.character p {
+  text-align: start;
+  padding-left: 20px;
+}
+
+.blue {
+  background: rgb(221, 221, 255);
+  border: 2px solid rgb(134, 134, 255);
+}
+
+.red {
+  background: rgb(255, 221, 221);
+  border: 2px solid rgb(255, 86, 86);
+}
+
+.silver {
+  background: rgb(223, 223, 223);
+  border: 2px solid rgb(134, 134, 134);
+}
+
+.yellow {
+  background: rgb(255, 252, 221);
+  border: 2px solid rgb(255, 233, 33);
+}
+
+.page-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.page-bar div {
+  width:20px;
+  height: 20px;
+  background: lightgrey;
+  border: 1px solid grey;
+  border-right: none;
+}
+
+.page-bar div:last-child {
+  border-right: 1px solid grey;;
+}
