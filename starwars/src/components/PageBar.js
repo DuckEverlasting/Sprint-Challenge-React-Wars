@@ -9,8 +9,6 @@ const makePageBar = (props) => {
   }
 }
 
-componentDid
-
 function PageBar(props) {
   return (
     <div className="page-bar">

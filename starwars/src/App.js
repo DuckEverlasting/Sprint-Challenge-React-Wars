@@ -9,13 +9,17 @@ class App extends Component {
     this.state = {
       starwarsChars: [],
       currentPage: 1,
-      itemsPerPage: 6,
+      itemsPerPage: 10,
       totalPages: 1
     };
   }
   
   componentDidMount() {
     this.getCharacters('https://swapi.co/api/people/');
+  }
+
+  componentDidUpdate() {
+    this.totalPagesCheck();
   }
 
   getCharacters = URL => {
@@ -37,6 +41,7 @@ class App extends Component {
   totalPagesCheck = () => {
     let pages = (Math.ceil(this.state.starwarsChars.length / this.state.itemsPerPage))
     console.log(pages)
+    if (pages === this.state.totalPages) {return}
     this.setState({
       totalPages: pages
     })
@@ -87,7 +92,6 @@ class App extends Component {
           pageEnd={this.pageEnd()}
         />
         <PageBar
-          totalPagesCheck={this.totalPagesCheck}
           totalPages={this.state.totalPages}
           pageChange={this.pageChange}
           pageBack={this.pageBack}
