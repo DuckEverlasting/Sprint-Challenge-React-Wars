@@ -1,0 +1,36 @@
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.character {
+  margin: 10px;
+  height: 200px;
+  width: 250px;
+}
+
+.character p {
+  text-align: start;
+  padding-left: 20px;
+}
+
+.blue {
+  background: rgb(221, 221, 255);
+  border: 2px solid rgb(134, 134, 255);
+}
+
+.red {
+  background: rgb(255, 221, 221);
+  border: 2px solid rgb(255, 86, 86);
+}
+
+.silver {
+  background: rgb(223, 223, 223);
+  border: 2px solid rgb(134, 134, 134);
+}
+
+.yellow {
+  background: rgb(255, 252, 221);
+  border: 2px solid rgb(255, 233, 33);
+}
