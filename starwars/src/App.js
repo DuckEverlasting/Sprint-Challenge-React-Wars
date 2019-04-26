@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CharList from './components/CharList';
+import PageBar from './components/PageBar'
 
 class App extends Component {
   constructor() {
@@ -8,10 +9,11 @@ class App extends Component {
     this.state = {
       starwarsChars: [],
       currentPage: 1,
-      itemsPerPage: 6
+      itemsPerPage: 6,
+      totalPages: 1
     };
   }
-
+  
   componentDidMount() {
     this.getCharacters('https://swapi.co/api/people/');
   }
@@ -32,6 +34,14 @@ class App extends Component {
       });
   };
 
+  totalPagesCheck = () => {
+    let pages = (Math.ceil(this.state.starwarsChars.length / this.state.itemsPerPage))
+    console.log(pages)
+    this.setState({
+      totalPages: pages
+    })
+  }
+
   pageStart = () => {
     return (
       (this.state.currentPage) *
@@ -39,7 +49,7 @@ class App extends Component {
       (this.state.itemsPerPage - 1)
     )
   }
-
+  compo
   pageEnd = () => {
     return (
       (this.state.currentPage) *
@@ -47,8 +57,27 @@ class App extends Component {
     )
   }
 
+  pageChange = (i) => {
+    this.setState({
+      currentPage: i
+    })
+  }
+
+  pageBack = () => {
+    if (this.state.currentPage <= 1) {return}
+    this.setState({
+      currentPage: this.state.currentPage - 1
+    })
+  }
+
+  pageForward = () => {
+    if (this.state.currentPage >= this.state.totalPages) {return}
+    this.setState({
+      currentPage: this.state.currentPage - 1
+    })
+  }
+
   render() {
-    console.log(this.pageStart(), this.pageEnd())
     return (
       <div className='App'>
         <h1 className='Header'>React Wars</h1>
@@ -56,6 +85,13 @@ class App extends Component {
           charArray={this.state.starwarsChars}
           pageStart={this.pageStart()}
           pageEnd={this.pageEnd()}
+        />
+        <PageBar
+          totalPagesCheck={this.totalPagesCheck}
+          totalPages={this.state.totalPages}
+          pageChange={this.pageChange}
+          pageBack={this.pageBack}
+          pageForward={this.pageForward}
         />
       </div>
     );

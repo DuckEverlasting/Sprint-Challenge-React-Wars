@@ -39,3 +39,20 @@
   background: rgb(255, 252, 221);
   border: 2px solid rgb(255, 233, 33);
 }
+
+.page-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.page-bar div {
+  width:20px;
+  height: 20px;
+  background: lightgrey;
+  border: 1px solid grey;
+  border-right: none;
+}
+
+.page-bar div:last-child {
+  border-right: 1px solid grey;;
+}
