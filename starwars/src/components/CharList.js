@@ -2,10 +2,10 @@ import React from 'react';
 import Char from './Char'
 import './StarWars.css'
 
-const heroList = ['Luke Skywalker', 'Leia Organa', 'Biggs Darklighter']
-const villainList = ['Darth Vader',]
-const droidList = ['C-3PO', 'R2-D2', 'R5-D4']
-const neutralList = ['Owen Lars', 'Beru Whitesun lars']
+const heroList = ['Luke Skywalker', 'Leia Organa', 'Biggs Darklighter', 'Obi-Wan Kenobi', 'Anakin Skywalker', 'Chewbacca', 'Han Solo', 'Wedge Antilles', 'Jek Tono Porkins', 'Yoda', 'Ackbar', 'Mon Mothma', 'Arvel Crynyd', 'Nien Nunb', 'Qui-Gon Jinn', 'Finis Valorum', 'Ric Olié', 'Quarsh Panaka']
+const villainList = ['Darth Vader', 'Wilhuff Tarkin', 'Palpatine', 'Nute Gunray', 'Jar Jar Binks']
+const droidList = ['C-3PO', 'R2-D2', 'R5-D4', 'IG-88']
+const neutralList = ['Owen Lars', 'Beru Whitesun lars', 'Greedo', 'Jabba Desilijic Tiure', 'Boba Fett', 'Bossk', 'Lando Calrissian', 'Lobot', 'Wicket Systri Warrick', 'Watto', 'Sebulba', 'Roos Tarpals', 'Rugor Nass']
 
 const roleHandler = (name) => {
   if (heroList.includes(name)){
