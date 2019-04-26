@@ -2,6 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-image: url('../sw-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .character {

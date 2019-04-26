@@ -6,7 +6,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      currentPage: 1,
+      itemsPerPage: 6
     };
   }
 
@@ -30,13 +32,30 @@ class App extends Component {
       });
   };
 
+  pageStart = () => {
+    return (
+      (this.state.currentPage) *
+      (this.state.itemsPerPage) -
+      (this.state.itemsPerPage - 1)
+    )
+  }
+
+  pageEnd = () => {
+    return (
+      (this.state.currentPage) *
+      (this.state.itemsPerPage)
+    )
+  }
+
   render() {
-    console.log(this.state.starwarsChars)
+    console.log(this.pageStart(), this.pageEnd())
     return (
       <div className='App'>
         <h1 className='Header'>React Wars</h1>
         <CharList 
           charArray={this.state.starwarsChars}
+          pageStart={this.pageStart()}
+          pageEnd={this.pageEnd()}
         />
       </div>
     );
